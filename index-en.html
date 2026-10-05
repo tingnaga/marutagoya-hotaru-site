@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marutagoya Hotaru | Log Cabin in the Satoyama of Naka City</title>
+<meta name="description" content="Marutagoya Hotaru is a log cabin nestled in the satoyama countryside of Naka City, Ibaraki Prefecture. Rent the whole property (up to 20 guests), enjoy a spacious garden and BBQ, and unwind with three generations of family, friends, or a group getaway.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;600;700;800&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --forest:#1f3d2e;
+    --forest-deep:#142a20;
+    --forest-light:#3f6350;
+    --wood:#7a4f32;
+    --wood-dark:#4a2f1d;
+    --wood-line:#c79a6b;
+    --ivory:#f6f1e4;
+    --ivory-dark:#ece2c8;
+    --ivory-deep:#e3d5ae;
+    --ember:#c9863f;
+    --ember-dark:#a8672a;
+    --firefly:#e3ec8f;
+    --text:#2b2318;
+    --text-soft:#5a5040;
+    --shadow: 0 18px 40px -18px rgba(31,61,46,0.35);
+    --radius-lg: 28px;
+    --radius-sm: 14px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--ivory);
+    color:var(--text);
+    font-family:'Zen Maru Gothic', sans-serif;
+    line-height:1.85;
+    font-weight:400;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Shippori Mincho', serif;
+    color:var(--forest-deep);
+    margin:0;
+    line-height:1.5;
+  }
+
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  section{position:relative;}
+
+  .wrap{
+    max-width:1120px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Shippori Mincho', serif;
+    letter-spacing:0.28em;
+    font-size:0.78rem;
+    color:var(--ember-dark);
+    font-weight:700;
+    margin-bottom:14px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;
+    height:1px;
+    background:var(--ember-dark);
+    display:inline-block;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 34px;
+    background:var(--ember);
+    color:var(--ivory);
+    font-family:'Shippori Mincho', serif;
+    font-weight:700;
+    font-size:1rem;
+    letter-spacing:0.04em;
+    border-radius:100px;
+    border:none;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+    transition:transform .25s ease, background .25s ease;
+  }
+  .btn:hover{ background:var(--ember-dark); transform:translateY(-2px); }
+  .btn.outline{
+    background:transparent;
+    color:var(--ivory);
+    border:1.5px solid rgba(246,241,228,0.7);
+    box-shadow:none;
+  }
+  .btn.outline:hover{ background:rgba(246,241,228,0.12); }
+  .btn.dark{
+    background:var(--forest);
+    color:var(--ivory);
+  }
+  .btn.dark:hover{ background:var(--forest-deep); }
+
+  /* ===== HEADER ===== */
+  header{
+    position:fixed;
+    top:0; left:0; right:0;
+    z-index:1000;
+    padding:16px 0;
+    background:linear-gradient(180deg, rgba(8,14,11,0.55) 0%, rgba(8,14,11,0.28) 70%, rgba(8,14,11,0) 100%);
+    transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+  }
+  header.scrolled{
+    background:rgba(20,42,32,0.92);
+    backdrop-filter:blur(10px);
+    padding:10px 0;
+    box-shadow:0 8px 24px rgba(0,0,0,0.15);
+  }
+  header .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#fff;
+    font-family:'Shippori Mincho', serif;
+    font-weight:800;
+    font-size:1.2rem;
+    letter-spacing:0.05em;
+    text-shadow:0 2px 8px rgba(0,0,0,0.5);
+  }
+  .logo small{
+    display:block;
+    font-family:'Zen Maru Gothic', sans-serif;
+    font-weight:400;
+    font-size:0.62rem;
+    letter-spacing:0.15em;
+    color:var(--firefly);
+    margin-top:2px;
+  }
+  nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    margin:0; padding:0;
+  }
+  nav a{
+    color:#f2ede0;
+    font-size:0.92rem;
+    font-weight:500;
+    letter-spacing:0.03em;
+    position:relative;
+    padding-bottom:4px;
+    text-shadow:0 2px 8px rgba(0,0,0,0.5);
+  }
+  nav a::after{
+    content:"";
+    position:absolute; left:0; bottom:0;
+    width:0; height:1px;
+    background:var(--firefly);
+    transition:width .25s ease;
+  }
+  nav a:hover::after{ width:100%; }
+  .nav-cta{
+    background:var(--ember);
+    color:#fff !important;
+    padding:10px 22px;
+    border-radius:100px;
+    font-family:'Shippori Mincho', serif;
+    font-weight:700;
+  }
+  .nav-cta::after{ display:none; }
+  .lang-switch{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-size:0.78rem;
+    color:#d8d2bd;
+    margin-left:6px;
+  }
+  .lang-switch a{
+    padding:2px 4px;
+    opacity:0.7;
+  }
+  .lang-switch a.active{
+    opacity:1;
+    color:var(--firefly);
+    font-weight:700;
+  }
+  .lang-switch a:hover{ opacity:1; }
+  .lang-switch span{ opacity:0.4; }
+  @media (max-width:900px){
+    .lang-switch{ margin:24px 0 0; }
+  }
+  .menu-toggle{
+    display:none;
+    background:none; border:none;
+    width:34px; height:26px;
+    position:relative;
+    cursor:pointer;
+  }
+  .menu-toggle span{
+    position:absolute; left:0; right:0; height:2px;
+    background:#fff; border-radius:2px;
+    transition:all .3s ease;
+  }
+  .menu-toggle span:nth-child(1){top:0;}
+  .menu-toggle span:nth-child(2){top:11px;}
+  .menu-toggle span:nth-child(3){top:22px;}
+  .menu-toggle.open span:nth-child(1){ transform:translateY(11px) rotate(45deg); }
+  .menu-toggle.open span:nth-child(2){ opacity:0; }
+  .menu-toggle.open span:nth-child(3){ transform:translateY(-11px) rotate(-45deg); }
+
+  /* ===== HERO ===== */
+  .hero{
+    height:100vh;
+    min-height:640px;
+    position:relative;
+    display:flex;
+    align-items:flex-end;
+    color:#fff;
+    overflow:hidden;
+  }
+  .hero-media{
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(10,18,14,0.55) 0%, rgba(10,18,14,0.4) 28%, rgba(10,18,14,0.58) 62%, rgba(8,14,11,0.92) 100%), var(--forest-deep);
+  }
+  /* ▼画像を入れてください: hero-exterior.jpg（ログハウス外観全体・夕方〜昼の自然光、庭と森が見える引きの写真） */
+  .hero-media img{
+    width:100%; height:100%; object-fit:cover;
+    position:absolute; inset:0;
+    mix-blend-mode:normal;
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    padding:0 24px 80px;
+    max-width:1120px;
+    margin:0 auto;
+    width:100%;
+  }
+  .hero-content .eyebrow{ color:var(--firefly); text-shadow:0 2px 10px rgba(0,0,0,0.6); }
+  .hero-content .eyebrow::before{ background:var(--firefly); }
+  .hero h1{
+    color:#fff;
+    font-size:clamp(2.1rem, 5.2vw, 3.6rem);
+    font-weight:700;
+    margin-bottom:18px;
+    text-shadow:0 3px 16px rgba(0,0,0,0.65);
+  }
+  .hero h1 span{
+    display:block;
+    font-size:0.42em;
+    letter-spacing:0.3em;
+    color:var(--firefly);
+    font-weight:600;
+    margin-bottom:10px;
+  }
+  .hero p.lead{
+    font-size:1.05rem;
+    max-width:560px;
+    color:#eee7d4;
+    margin-bottom:34px;
+    text-shadow:0 2px 10px rgba(0,0,0,0.55);
+  }
+  .hero-actions{ display:flex; gap:16px; flex-wrap:wrap; }
+  .hero-scroll{
+    position:absolute; right:36px; bottom:34px;
+    z-index:2;
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+    color:#f2ede0; font-size:0.7rem; letter-spacing:0.2em;
+  }
+  .hero-scroll .line{
+    width:1px; height:52px;
+    background:linear-gradient(180deg, rgba(255,255,255,0.9), transparent);
+    animation: scrollLine 2.4s ease-in-out infinite;
+  }
+  @keyframes scrollLine{ 0%{transform:scaleY(0); transform-origin:top;} 50%{transform:scaleY(1); transform-origin:top;} 51%{transform-origin:bottom;} 100%{transform:scaleY(0); transform-origin:bottom;} }
+
+  /* ===== 木目シグネチャー: ログハウスと蛍のディバイダー ===== */
+  .signature-divider{
+    background:var(--forest-deep);
+    padding:54px 0 30px;
+    text-align:center;
+  }
+  .signature-divider svg{ width:220px; height:auto; }
+  .signature-divider p{
+    color:var(--firefly);
+    font-family:'Shippori Mincho', serif;
+    font-size:0.82rem;
+    letter-spacing:0.28em;
+    margin-top:14px;
+  }
+
+  /* ===== INTRO / コンセプト ===== */
+  .intro{
+    background:var(--ivory);
+    padding:110px 0 90px;
+    text-align:center;
+  }
+  .intro h2{
+    font-size:clamp(1.6rem, 3.4vw, 2.4rem);
+    max-width:760px;
+    margin:0 auto 26px;
+  }
+  .intro p{
+    max-width:640px;
+    margin:0 auto;
+    color:var(--text-soft);
+    font-size:1rem;
+  }
+  .intro-badges{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    flex-wrap:wrap;
+    margin-top:44px;
+  }
+  .badge{
+    background:#fff;
+    border:1px solid var(--ivory-deep);
+    padding:10px 20px;
+    border-radius:100px;
+    font-size:0.86rem;
+    color:var(--forest);
+    font-weight:700;
+  }
+
+  /* ===== 施設紹介 ===== */
+  .facility{
+    background:var(--ivory);
+    padding:40px 0 110px;
+  }
+  .section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    flex-wrap:wrap;
+    gap:24px;
+    margin-bottom:50px;
+  }
+  .section-head h2{
+    font-size:clamp(1.7rem, 3.6vw, 2.5rem);
+  }
+  .section-head p{
+    max-width:420px;
+    color:var(--text-soft);
+    font-size:0.94rem;
+  }
+
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr;
+    grid-template-rows:220px 220px;
+    gap:14px;
+    margin-bottom:64px;
+  }
+  .gallery-grid figure{
+    margin:0;
+    border-radius:var(--radius-sm);
+    overflow:hidden;
+    position:relative;
+    background:var(--ivory-dark);
+  }
+  .gallery-grid figure img{ width:100%; height:100%; object-fit:cover; transition:transform .5s ease;}
+  .gallery-grid figure:hover img{ transform:scale(1.06); }
+  .gallery-grid figure:nth-child(1){ grid-row:1 / span 2; }
+  .gallery-grid figcaption{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:14px 16px;
+    background:linear-gradient(0deg, rgba(20,32,25,0.75), transparent);
+    color:#fff;
+    font-size:0.8rem;
+    letter-spacing:0.05em;
+  }
+
+  .feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:22px;
+  }
+  .feature-card{
+    background:#fff;
+    border-radius:var(--radius-sm);
+    padding:30px 26px;
+    border:1px solid var(--ivory-deep);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .feature-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
+  .feature-card .icon{
+    width:50px; height:50px;
+    margin-bottom:18px;
+    color:var(--ember-dark);
+  }
+  .feature-card h3{
+    font-size:1.08rem;
+    margin-bottom:10px;
+  }
+  .feature-card p{
+    font-size:0.9rem;
+    color:var(--text-soft);
+    margin:0;
+  }
+
+  /* ===== 自然の魅力 ===== */
+  .nature{
+    background:var(--forest-deep);
+    color:#f2ede0;
+    padding:110px 0;
+  }
+  .nature .eyebrow{ color:var(--firefly); }
+  .nature .eyebrow::before{ background:var(--firefly); }
+  .nature .section-head h2{ color:#fff; }
+  .nature .section-head p{ color:#cdd9cd; }
+
+  .nature-feature{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+    margin-bottom:90px;
+  }
+  .nature-feature:last-of-type{ margin-bottom:0; }
+  .nature-feature.reverse{ direction:rtl; }
+  .nature-feature.reverse > *{ direction:ltr; }
+  .nature-media{
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    aspect-ratio:4/3;
+    background:rgba(255,255,255,0.05);
+  }
+  .nature-media img{ width:100%; height:100%; object-fit:cover; }
+  .nature-text .tag{
+    display:inline-block;
+    font-size:0.75rem;
+    letter-spacing:0.15em;
+    background:rgba(227,236,143,0.14);
+    color:var(--firefly);
+    padding:6px 14px;
+    border-radius:100px;
+    margin-bottom:18px;
+    font-weight:700;
+  }
+  .nature-text h3{
+    color:#fff;
+    font-size:1.7rem;
+    margin-bottom:16px;
+  }
+  .nature-text p{
+    color:#cdd9cd;
+    font-size:0.96rem;
+  }
+  .nature-text ul{
+    margin:20px 0 0;
+    padding:0;
+    list-style:none;
+  }
+  .nature-text li{
+    padding-left:24px;
+    position:relative;
+    font-size:0.9rem;
+    color:#cdd9cd;
+    margin-bottom:8px;
+  }
+  .nature-text li::before{
+    content:"◦";
+    position:absolute; left:0; top:0;
+    color:var(--firefly);
+  }
+
+  /* 里山カレンダー */
+  .season-calendar{
+    margin-top:100px;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--radius-lg);
+    padding:44px;
+  }
+  .season-calendar h3{
+    color:#fff;
+    text-align:center;
+    font-size:1.4rem;
+    margin-bottom:8px;
+  }
+  .season-calendar > p{
+    text-align:center;
+    color:#cdd9cd;
+    font-size:0.88rem;
+    margin-bottom:40px;
+  }
+  .season-row{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:20px;
+  }
+  .season-item{
+    text-align:center;
+    padding:26px 16px;
+    border-radius:var(--radius-sm);
+    background:rgba(255,255,255,0.03);
+    border-top:3px solid var(--firefly);
+  }
+  .season-item .month{
+    font-family:'Shippori Mincho', serif;
+    color:var(--firefly);
+    font-size:0.8rem;
+    letter-spacing:0.15em;
+    margin-bottom:10px;
+  }
+  .season-item h4{
+    color:#fff;
+    font-size:1.05rem;
+    margin-bottom:8px;
+  }
+  .season-item p{
+    color:#b9c7b9;
+    font-size:0.82rem;
+    margin:0;
+  }
+
+  /* ===== 宿泊案内 ===== */
+  .stay{
+    background:var(--ivory);
+    padding:110px 0;
+  }
+  .stay-layout{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    align-items:start;
+  }
+  .stay-media{
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+  }
+  /* ▼画像を入れてください: interior-living.jpg（リビング・薪ストーブや吹き抜けなど木の温もりが伝わる室内写真） */
+  .stay-media img{ width:100%; display:block; }
+  .stay-media-caption{
+    font-size:0.78rem;
+    color:var(--text-soft);
+    margin-top:10px;
+  }
+
+  .stay-table{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:34px;
+  }
+  .stay-table th, .stay-table td{
+    text-align:left;
+    padding:16px 0;
+    border-bottom:1px solid var(--ivory-deep);
+    font-size:0.92rem;
+    vertical-align:top;
+  }
+  .stay-table th{
+    width:130px;
+    color:var(--forest);
+    font-family:'Shippori Mincho', serif;
+    font-weight:700;
+  }
+
+  .amenity-tags{
+    display:flex; flex-wrap:wrap; gap:10px;
+    margin-bottom:36px;
+  }
+  .amenity-tags span{
+    background:#fff;
+    border:1px solid var(--ivory-deep);
+    padding:8px 16px;
+    border-radius:100px;
+    font-size:0.82rem;
+    color:var(--forest);
+  }
+
+  .interior-strip{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(140px, 1fr));
+    gap:12px;
+    margin-top:70px;
+  }
+  .interior-strip figure{
+    margin:0; border-radius:var(--radius-sm); overflow:hidden;
+    aspect-ratio:3/4; background:var(--ivory-dark);
+  }
+  .interior-strip img{ width:100%; height:100%; object-fit:cover; }
+
+  /* ===== 周辺観光 ===== */
+  .around{
+    background:var(--ivory);
+    padding:0 0 110px;
+  }
+  .around-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:24px;
+  }
+  .around-card{
+    background:#fff;
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+    border:1px solid var(--ivory-deep);
+    transition:transform .25s ease, box-shadow .25s ease;
+  }
+  .around-card:hover{ transform:translateY(-6px); box-shadow:var(--shadow); }
+  .around-media{ aspect-ratio:4/3; background:var(--ivory-dark); }
+  .around-media img{ width:100%; height:100%; object-fit:cover; }
+  .around-body{ padding:26px; }
+  .around-body .dist{
+    font-size:0.75rem;
+    color:var(--ember-dark);
+    font-weight:700;
+    letter-spacing:0.05em;
+    margin-bottom:8px;
+    display:block;
+  }
+  .around-body h3{ font-size:1.15rem; margin-bottom:10px; }
+  .around-body p{ font-size:0.88rem; color:var(--text-soft); margin:0; }
+
+  /* ===== 予約案内 ===== */
+  .reserve{
+    background:linear-gradient(180deg, var(--forest) 0%, var(--forest-deep) 100%);
+    color:#f2ede0;
+    padding:110px 0 90px;
+  }
+  .reserve .eyebrow{ color:var(--firefly);}
+  .reserve .eyebrow::before{ background:var(--firefly);}
+  .reserve-top{
+    text-align:center;
+    max-width:640px;
+    margin:0 auto 60px;
+  }
+  .reserve-top h2{ color:#fff; font-size:clamp(1.7rem,3.4vw,2.4rem); margin-bottom:16px; }
+  .reserve-top p{ color:#cdd9cd; font-size:0.96rem; }
+
+  .price-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+    margin-bottom:70px;
+  }
+  .price-card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:var(--radius-lg);
+    padding:34px 28px;
+    text-align:center;
+  }
+  .price-card.highlight{
+    background:rgba(227,236,143,0.1);
+    border-color:var(--firefly);
+  }
+  .price-card .label{
+    font-size:0.78rem;
+    letter-spacing:0.15em;
+    color:var(--firefly);
+    margin-bottom:14px;
+    display:block;
+  }
+  .price-card .amount{
+    font-family:'Shippori Mincho', serif;
+    font-size:2.1rem;
+    color:#fff;
+    margin-bottom:6px;
+  }
+  .price-card .amount span{ font-size:0.9rem; font-family:'Zen Maru Gothic',sans-serif; color:#cdd9cd; }
+  .price-card p.note{ font-size:0.82rem; color:#b9c7b9; margin-top:14px; }
+
+  .flow-row{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+    margin-bottom:70px;
+  }
+  .flow-item{ text-align:center; position:relative; }
+  .flow-item .num{
+    width:52px; height:52px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.3);
+    display:flex; align-items:center; justify-content:center;
+    margin:0 auto 16px;
+    font-family:'Shippori Mincho', serif;
+    color:var(--firefly);
+  }
+  .flow-item h4{ color:#fff; font-size:1rem; margin-bottom:8px; }
+  .flow-item p{ font-size:0.82rem; color:#b9c7b9; margin:0; }
+
+  .reserve-cta{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+
+  .res-form{
+    background:#fff;
+    border:1px solid rgba(255,255,255,0.14);
+    border-radius:var(--radius-lg);
+    padding:40px;
+    margin:70px 0;
+    color:var(--text);
+  }
+  .res-form h3{ color:var(--forest-deep); margin-bottom:16px; font-size:1.3rem; }
+  .res-form .form-note{
+    background:rgba(227,236,143,0.08);
+    border:1px solid rgba(227,236,143,0.3);
+    border-radius:var(--radius-sm);
+    padding:18px 22px;
+    font-size:0.84rem;
+    line-height:1.9;
+    color:var(--text-soft);
+    margin-bottom:30px;
+  }
+  .res-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+  }
+  .res-grid .full{ grid-column:1/-1; }
+  .res-field label{
+    display:block;
+    font-size:0.82rem;
+    font-weight:700;
+    color:var(--forest);
+    margin-bottom:6px;
+  }
+  .res-field input, .res-field textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid var(--ivory-deep);
+    border-radius:10px;
+    font-family:inherit;
+    font-size:0.92rem;
+    background:var(--ivory);
+    color:var(--text);
+  }
+  .res-field textarea{ min-height:90px; resize:vertical; }
+  .res-checkbox{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+    font-size:0.86rem;
+    color:var(--text-soft);
+    margin-top:22px;
+  }
+  .res-checkbox input{ margin-top:4px; width:auto; }
+  .res-submit{ margin-top:26px; }
+  @media (max-width:900px){ .res-grid{ grid-template-columns:1fr; } }
+
+  .access-box{
+    margin-top:80px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--radius-lg);
+    padding:40px;
+  }
+  .access-map{
+    border-radius:var(--radius-sm);
+    overflow:hidden;
+    aspect-ratio:4/3;
+    background:rgba(255,255,255,0.06);
+  }
+  /* ▼画像を入れてください: access-map.jpg（Googleマップのスクリーンショット、または周辺地図イラスト） */
+  .access-map img{ width:100%; height:100%; object-fit:cover; }
+  .access-info h3{ color:#fff; font-size:1.2rem; margin-bottom:16px; }
+  .access-info p{ color:#cdd9cd; font-size:0.9rem; margin-bottom:8px; }
+
+  /* ===== FOOTER ===== */
+  footer{
+    background:var(--forest-deep);
+    color:#cdd9cd;
+    padding:60px 0 30px;
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+  .footer-top{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:30px;
+    margin-bottom:40px;
+  }
+  .footer-logo{
+    font-family:'Shippori Mincho', serif;
+    color:#fff;
+    font-size:1.3rem;
+    font-weight:800;
+    margin-bottom:12px;
+  }
+  .footer-top p{ font-size:0.85rem; max-width:320px; color:#a9b8a9; }
+  .footer-links{ display:flex; gap:40px; flex-wrap:wrap; }
+  .footer-links div h5{
+    color:#fff; font-size:0.85rem; margin-bottom:14px; letter-spacing:0.05em;
+    font-family:'Shippori Mincho', serif;
+  }
+  .footer-links ul{ list-style:none; margin:0; padding:0; }
+  .footer-links li{ margin-bottom:8px; font-size:0.85rem; }
+  .footer-links a:hover{ color:#fff; }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.08);
+    padding-top:22px;
+    font-size:0.76rem;
+    color:#7f9080;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  /* ===== レスポンシブ ===== */
+  @media (max-width:900px){
+    nav ul{
+      position:fixed;
+      top:0; right:0;
+      height:100vh;
+      width:78%;
+      max-width:320px;
+      background:var(--forest-deep);
+      flex-direction:column;
+      justify-content:center;
+      align-items:flex-start;
+      padding:0 40px;
+      gap:26px;
+      transform:translateX(100%);
+      transition:transform .35s ease;
+    }
+    nav ul.open{ transform:translateX(0); }
+    .menu-toggle{ display:block; }
+
+    .gallery-grid{
+      grid-template-columns:1fr 1fr;
+      grid-template-rows:180px 180px 180px;
+    }
+    .gallery-grid figure:nth-child(1){ grid-column:1/-1; grid-row:1; }
+    .gallery-grid figure:nth-child(2){ grid-row:2; }
+    .gallery-grid figure:nth-child(3){ grid-row:2; }
+    .gallery-grid figure:nth-child(4){ grid-column:1/-1; grid-row:3; }
+
+    .feature-grid{ grid-template-columns:1fr; }
+    .nature-feature{ grid-template-columns:1fr; gap:26px; }
+    .nature-feature.reverse{ direction:ltr; }
+    .season-row{ grid-template-columns:1fr 1fr; }
+    .stay-layout{ grid-template-columns:1fr; }
+    .interior-strip{ grid-template-columns:repeat(2,1fr); }
+    .around-grid{ grid-template-columns:1fr; }
+    .price-grid{ grid-template-columns:1fr; }
+    .flow-row{ grid-template-columns:1fr 1fr; }
+    .access-box{ grid-template-columns:1fr; }
+    .footer-top{ flex-direction:column; }
+  }
+</style>
+<meta name="robots" content="noindex, nofollow">
+<link rel="stylesheet" href="review.css">
+</head>
+<body>
+<div class="review-banner">Connection preview — submission will be enabled after setup.</div>
+
+<header id="siteHeader">
+  <div class="wrap">
+    <a href="#top" class="logo" style="flex-direction:column; align-items:flex-start;">
+      <span>Marutagoya Hotaru <small>Log Cabin in the Satoyama of Naka City</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Menu" aria-expanded="false" aria-controls="navList" type="button">
+      <span></span><span></span><span></span>
+    </button>
+    <nav>
+      <ul id="navList">
+        <li><a href="#facility">Facility</a></li>
+        <li><a href="#nature">Nature</a></li>
+        <li><a href="#stay">Stay Info</a></li>
+        <li><a href="#around">Nearby</a></li>
+        <li><a href="#reserve" class="nav-cta">Reservations</a></li>
+        <li class="lang-switch">
+          <a href="index.html">JA</a><span>|</span><a href="index-en.html" class="active">EN</a><span>|</span><a href="index-zh.html">中文</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-media">
+    <!-- Image: approach path to the log cabin through greenery -->
+    <img src="cabin-approach.jpg" alt="Log cabin \"Marutagoya Hotaru\" at the end of a green, tree-lined path">
+  </div>
+  <div class="hero-content">
+    <p class="eyebrow">Naka City, Ibaraki ・ Whole-property log cabin rental</p>
+    <h1><span>Wrapped in nature, a log cabin for everyone</span>Marutagoya Hotaru</h1>
+    <p class="lead">A whole-property log cabin nestled in the quiet satoyama countryside of Naka City. With a spacious layout for up to 20 guests, it's a relaxed getaway for three-generation trips, family holidays, or gatherings with friends.</p>
+    <div class="hero-actions">
+      <a href="#reserve" class="btn">Check request status</a>
+      <a href="#facility" class="btn outline">See the Facility</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>SCROLL</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ============ SIGNATURE DIVIDER ============ -->
+<div class="signature-divider">
+  <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg" fill="none">
+    <!-- Signature illustration: smoke from the chimney turning into fireflies -->
+    <path d="M40 120 L40 70 L70 45 L100 70 L100 120 Z" stroke="var(--wood-line)" stroke-width="2.5" stroke-linejoin="round"/>
+    <rect x="80" y="55" width="10" height="22" stroke="var(--wood-line)" stroke-width="2.5"/>
+    <path d="M85 55 C 83 40, 92 34, 88 20" stroke="var(--firefly)" stroke-width="2" stroke-linecap="round" opacity="0.85"/>
+    <circle cx="88" cy="18" r="2.2" fill="var(--firefly)"/>
+    <circle cx="102" cy="8" r="1.8" fill="var(--firefly)" opacity="0.8"/>
+    <circle cx="118" cy="16" r="1.6" fill="var(--firefly)" opacity="0.65"/>
+    <circle cx="128" cy="30" r="1.4" fill="var(--firefly)" opacity="0.5"/>
+    <line x1="20" y1="120" x2="220" y2="120" stroke="var(--wood-line)" stroke-width="1.5" opacity="0.5"/>
+    <path d="M150 115 Q160 90 150 70 Q165 75 170 55" stroke="var(--forest-light)" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+    <path d="M180 118 Q190 100 182 80" stroke="var(--forest-light)" stroke-width="2" stroke-linecap="round" opacity="0.5"/>
+  </svg>
+  <p>MARUTAGOYA HOTARU &nbsp;&mdash;&nbsp; Log Cabin in the Satoyama of Naka City</p>
+</div>
+
+<!-- ============ CONCEPT / INTRO ============ -->
+<section class="intro">
+  <div class="wrap">
+    <p class="eyebrow" style="justify-content:center;">CONCEPT</p>
+    <h2>Wrapped in the warmth of wood and the quiet of the satoyama,<br>a special time with the people who matter most.</h2>
+    <p>Marutagoya Hotaru is a log cabin set in the satoyama countryside of Naka City, Ibaraki Prefecture. Your stay includes exclusive use of both the log cabin and an adjoining single-story building. Set well apart from neighboring homes, the spacious grounds open onto a garden surrounded by rural scenery. Whether it's a three-generation trip, a family summer holiday, or a gathering with close friends, large groups can relax and spread out, surrounded by nature.</p>
+    <div class="intro-badges">
+      <span class="badge">Up to 20 guests (3 bedrooms)</span>
+      <span class="badge">Exclusive use of 2 buildings</span>
+      <span class="badge">Spacious garden</span>
+      <span class="badge">BBQ &amp; outdoor hearth</span>
+      <span class="badge">Quiet, set apart from neighbors</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FACILITY ============ -->
+<section class="facility" id="facility">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">FACILITY</p>
+        <h2>Facility</h2>
+      </div>
+      <p>A wood-scented log cabin paired with an adjoining single-story guest building. A free, open layout that only a whole-property rental can offer, comfortable even for large groups.</p>
+    </div>
+
+    <div class="gallery-grid">
+      <figure>
+        <!-- Image: log cabin entrance porch -->
+        <img src="cabin-entrance-exterior.jpg" alt="Log cabin entrance porch and wooden deck" loading="lazy" decoding="async">
+        <figcaption>Exterior</figcaption>
+      </figure>
+      <figure>
+        <!-- Image: courtyard with artificial turf and picnic table -->
+        <img src="courtyard.jpg" alt="Courtyard with artificial turf and a picnic table" loading="lazy" decoding="async">
+        <figcaption>Garden ・ Courtyard</figcaption>
+      </figure>
+      <figure>
+        <!-- Image: bath with log walls and stone tub -->
+        <img src="bath.jpg" alt="Stone bathtub surrounded by log walls" loading="lazy" decoding="async">
+        <figcaption>Bathroom</figcaption>
+      </figure>
+      <figure>
+        <!-- Image: bedroom with beds -->
+        <img src="bedroom-1.jpg" alt="Bedroom with beds" loading="lazy" decoding="async">
+        <figcaption>Bedroom</figcaption>
+      </figure>
+      <figure>
+        <!-- Image: log cabin living room with high ceiling and pendant lights -->
+        <img src="cabin-living-1.jpg" alt="Living room with vaulted ceiling and pendant lights" loading="lazy" decoding="async">
+        <figcaption>Living Room</figcaption>
+      </figure>
+    </div>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 40h36M10 40V20l14-10 14 10v20M20 40V26h8v14"/></svg>
+        <h3>Exclusive use of 2 buildings ・ Up to 20 guests</h3>
+        <p>Enjoy exclusive use of both the log cabin and the single-story building. With 3 bedrooms , the spacious layout suits large groups and three-generation trips alike.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 42c4-14 10-20 18-20s14 6 18 20M14 22c0-8 4-14 10-14s10 6 10 14"/></svg>
+        <h3>A spacious garden</h3>
+        <p>Nearby is a biotope pond where you can encounter seasonal creatures and plants while strolling. Set well apart from neighboring homes, it offers plenty of privacy too.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="24" cy="30" r="10"/><path d="M24 6v8M14 12l4 6M34 12l-4 6"/></svg>
+        <h3>BBQ &amp; outdoor hearth</h3>
+        <p>The garden has BBQ equipment plus a simple outdoor hearth. Gather around the coals, or try your hand at hearth cooking.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="24" cy="24" r="4"/><circle cx="12" cy="14" r="1.6" fill="currentColor" stroke="none"/><circle cx="34" cy="12" r="1.6" fill="currentColor" stroke="none"/><circle cx="38" cy="26" r="1.6" fill="currentColor" stroke="none"/><circle cx="10" cy="30" r="1.6" fill="currentColor" stroke="none"/></svg>
+        <h3>Firefly viewing (seasonal)</h3>
+        <p>Surrounded by nearby waterways and rice paddies. On early-summer evenings, you may catch sight of fireflies around the property.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 20c8-6 24-6 32 0M8 28c8-6 24-6 32 0M14 36c6-4 14-4 20 0"/></svg>
+        <h3>Nagashi-somen (optional)</h3>
+        <p>Try nagashi-somen, noodles flowing down a bamboo flume — an available option for a summertime treat with family or friends.</p>
+      </div>
+      <div class="feature-card">
+        <svg class="icon" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M10 40c0-10 6-16 14-16s14 6 14 16M14 24c0-6 4-10 10-10s10 4 10 10" /><rect x="8" y="38" width="32" height="4" rx="1"/></svg>
+        <h3>Stone bathtub with hinoki interior</h3>
+        <p>A generously sized stone bathtub beneath a fragrant hinoki (cypress) ceiling and walls — a wonderfully relaxing way to soak away travel fatigue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 自然の魅力 ============ -->
+<section class="nature" id="nature">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">NATURE</p>
+        <h2>The Charm of Nature</h2>
+      </div>
+      <p>Satoyama countryside that changes its expression with each season. Here you'll find nature experiences you won't find anywhere else.</p>
+    </div>
+
+    <div class="nature-feature">
+      <div class="nature-media">
+        <!-- Image: firefly (actual photo taken on the property) -->
+        <img src="firefly-photo.jpg" alt="Actual photo of a firefly taken on the property" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy" decoding="async">
+      </div>
+      <div class="nature-text">
+        <span class="tag">Seasonal ・ Early summer</span>
+        <h3>Fireflies at Play, a Gift of Summer Nights</h3>
+        <p>Along the waterways around the property, fireflies can sometimes be seen dancing on early-summer nights. Turning off the lights and waiting quietly is, in itself, one of the luxuries unique to the satoyama.</p>
+        <ul>
+          <li>Best viewed roughly early to late June</li>
+          <li>Sightings depend on weather and temperature and are not guaranteed</li>
+          <li>A popular nature-watching experience for children and grandchildren alike</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nature-feature reverse">
+      <div class="nature-media">
+        <!-- Image: nagashi-somen experience (actual photo) -->
+        <img src="somen-photo-09.jpg" alt="Actual nagashi-somen experience held on the property" style="width:100%; height:100%; object-fit:cover; display:block;" loading="lazy" decoding="async">
+      </div>
+      <div class="nature-text">
+        <span class="tag">Optional experience</span>
+        <h3>Nagashi-somen: a Summer Tradition on a Bamboo Flume</h3>
+        <p>We can set up a bamboo flume in the garden for nagashi-somen — noodles flowing down a split bamboo channel. It's a classic summer activity that gets everyone, from kids to adults, involved.</p>
+        <ul>
+          <li>Reservation required (please request when booking)</li>
+          <li>Setup sized for large groups</li>
+          <li>Pairs well with a BBQ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="nature-feature">
+      <div class="nature-media">
+        <!-- Image: view from the window (rice paddies and satoyama road) -->
+        <img src="window-view.jpg" alt="Rural rice-paddy scenery and a satoyama road seen from the window" loading="lazy" decoding="async">
+      </div>
+      <div class="nature-text">
+        <span class="tag">Year-round</span>
+        <h3>Breathe in the Satoyama Air</h3>
+        <p>The property is surrounded by rice paddies and coppice woods. Nearby is a biotope pond you can stop by while strolling, home to seasonal creatures and plants. Set apart from neighboring homes, mornings greet you with the calls of bush warblers and pheasants, while evenings let you have the relaxed satoyama air all to yourself.</p>
+      </div>
+    </div>
+
+    <div class="nature-feature reverse" style="margin-top:0;">
+      <div class="nature-media" style="background:rgba(255,255,255,0.06); display:flex; align-items:center; justify-content:center; aspect-ratio:4/3;">
+        <span style="color:#8a9a8a; font-size:0.82rem; letter-spacing:0.1em;">PHOTO COMING SOON</span>
+      </div>
+      <div class="nature-text">
+        <span class="tag">Coming soon</span>
+        <h3>More Satoyama Experiences on the Way</h3>
+        <p>Marutagoya Hotaru plans to introduce a wood-burning stove, along with satoyama experiences such as bamboo-shoot digging, rice planting, and bamboo craft workshops. We aim to be a log cabin where there's something new to discover every time you visit.</p>
+      </div>
+    </div>
+
+    <div class="season-calendar">
+      <h3>A Satoyama Calendar of the Seasons</h3>
+      <p>How to enjoy nature at Marutagoya Hotaru, season by season</p>
+      <div class="season-row">
+        <div class="season-item">
+          <div class="month">SPRING</div>
+          <h4>Spring</h4>
+          <p>Fresh greenery and rice planting as the satoyama awakens</p>
+        </div>
+        <div class="season-item">
+          <div class="month">SUMMER</div>
+          <h4>Summer</h4>
+          <p>Firefly viewing, nagashi-somen, and a sky full of stars</p>
+        </div>
+        <div class="season-item">
+          <div class="month">AUTUMN</div>
+          <h4>Autumn</h4>
+          <p>A bountiful rural landscape and autumn-leaf walks</p>
+        </div>
+        <div class="season-item">
+          <div class="month">WINTER</div>
+          <h4>Winter</h4>
+          <p>Crisp air and quiet satoyama nights</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 宿泊案内 ============ -->
+<section class="stay" id="stay">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">STAY GUIDE</p>
+        <h2>Stay Info</h2>
+      </div>
+      <p>Free-form planning made possible by exclusive use of both buildings. Here's what you need to know for your stay.</p>
+    </div>
+
+    <div class="stay-layout">
+      <div>
+        <div class="stay-media">
+          <!-- Image: log cabin living room 2 (dining table and chairs, light from the window) -->
+          <img src="cabin-living-2.jpg" alt="Living-dining space with a dining table and chairs" loading="lazy" decoding="async">
+        </div>
+        <p class="stay-media-caption">The wood-scented living-dining space is made for gathering together.</p>
+
+        <div class="interior-strip">
+          <figure><!-- Image: bedroom 2, tatami room --><img src="bedroom-2-tatami.jpg" alt="Tatami room (bedroom 2)" loading="lazy" decoding="async"></figure>
+          <figure><!-- Image: bedroom 3, tatami room with darts --><img src="bedroom-3-tatami.jpg" alt="Tatami room (bedroom 3)" loading="lazy" decoding="async"></figure>
+          <figure><!-- Image: washstand --><img src="washstand-1.jpg" alt="Washstand" loading="lazy" decoding="async"></figure>
+          <figure><!-- Image: toilet --><img src="toilet-1.jpg" alt="Toilet" loading="lazy" decoding="async"></figure>
+          <figure><!-- Image: log cabin kitchen --><img src="cabin-kitchen.jpg" alt="Kitchen with stainless steel sink" loading="lazy" decoding="async"></figure>
+          <figure><!-- Image: kitchen dish cabinet --><img src="kitchen-cabinet.jpg" alt="Dish cabinet stocked with tableware" loading="lazy" decoding="async"></figure>
+          
+          
+          <figure><!-- Image: path to the single-story building through the garden --><img src="annex-approach.jpg" alt="Path through the garden to the guest building" loading="lazy" decoding="async"></figure>
+          <figure><!-- Image: BBQ equipment --><img src="bbq-equipment.jpg" alt="BBQ grill set up in the garden" loading="lazy" decoding="async"></figure>
+          <figure><!-- Image: view from window 2 (greenery and road) --><img src="window-view-2.jpg" alt="View of greenery and the road from a window" loading="lazy" decoding="async"></figure>
+          
+          <figure><!-- Image: guest building entrance, view toward the garden --><img src="annex-entrance-view.jpg" alt="View of the garden from the guest building's entrance" loading="lazy" decoding="async"></figure>
+          <figure><!-- Image: bedroom 2, tatami room, alternate angle --><img src="bedroom-2-tatami-2.jpg" alt="Tatami room (bedroom 2, alternate angle)" loading="lazy" decoding="async"></figure>
+          <figure><!-- Image: cutting bamboo for nagashi-somen --><img src="somen-photo-05.jpg" alt="Cutting bamboo to prepare for nagashi-somen" loading="lazy" decoding="async"></figure>
+          <figure><!-- Image: carrying bamboo for nagashi-somen --><img src="somen-photo-07.jpg" alt="Carrying bamboo for nagashi-somen" loading="lazy" decoding="async"></figure>
+          <figure><!-- Image: finished bamboo flume with water flowing --><img src="somen-photo-08.jpg" alt="Water flowing through the finished nagashi-somen bamboo flume" loading="lazy" decoding="async"></figure>
+        </div>
+      </div>
+
+      <div>
+        <table class="stay-table">
+          <tr><th>Buildings</th><td>Exclusive use of 2 buildings: the log cabin (living room, dining room, kitchen, 1 bedroom, bathroom, toilet) and the single-story guest building (2 bedrooms, toilet, washroom)</td></tr>
+          <tr><th>Capacity</th><td>Up to 20 guests (exclusive use of both buildings)</td></tr>
+          <tr><th>Bedding</th><td>Maximum 20 guests. Sleeping arrangements depend on group size and composition; two guests may share a double bed.</td></tr>
+          <tr><th>Check-in</th><td>From 15:00 (please submit the names of all guests by the day before your stay)</td></tr>
+          <tr><th>Check-out</th><td>By 11:00</td></tr>
+          <tr><th>Parking</th><td>Free, on-site (no reservation needed)</td></tr>
+          <tr><th>Pets</th><td>Not allowed; legally recognized assistance dogs are handled in accordance with Japanese law</td></tr>
+          <tr><th>Smoking</th><td>No smoking indoors. Smoking is permitted only in the designated outdoor area.</td></tr>
+          <tr><th>Quiet hours</th><td>Please keep noise down between 22:00 and 7:00</td></tr>
+          <tr><th>Internet</th><td>No internet connection (Wi-Fi is not available)</td></tr>
+          <tr><th>Children</th><td>Adults and children pay the same; include everyone in the guest count. No cribs or extra beds.</td></tr>
+          <tr><th>Cancellation policy</th><td>Direct bookings: cancellation is free through eight days before check-in; 100% from seven days before through check-in day. Final guest count is normally set seven days before check-in. Reductions after final confirmation are not refunded. Increases require individual approval of capacity, bedding and operating conditions, with a recalculated price (maximum 20). The property pays bank fees for refunds. OTA bookings follow their agreed conditions.</td></tr>
+        </table>
+
+        <div class="amenity-tags">
+          <span>Air conditioning</span>
+          <span>Kitchen (fridge, stove)</span>
+          <span>Stone bathtub, hinoki interior</span>
+          <span>BBQ equipment</span>
+          <span>Simple outdoor hearth</span>
+          <span>Outdoor furniture</span>
+          <span>Spacious garden</span>
+          <span>Private entrance</span>
+          <span>Fire extinguisher / smoke alarm</span>
+          <span>Free on-site parking</span>
+        </div>
+        <p style="font-size:0.8rem; color:var(--text-soft); margin:-8px 0 26px;">Languages: Japanese, English, Chinese　／　Operated by: Chisetsu Co., Ltd.</p>
+
+        <a href="#reserve" class="btn dark">Check request status</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 周辺観光 ============ -->
+<section class="floor-section" id="floor-plan"><div class="wrap"><h2>Rooms & bedding</h2><p class="floor-capacity">Maximum 20 guests across the entire property</p><p>The total party must not exceed 20 guests. Bedding use varies with your group; two guests may share a double bed. Bedding arrangements do not change the accommodation price.</p><div class="floor-grid"><figure><h3>Log cabin</h3><img src="floor-cabin-en.svg" alt="Log cabin — Rooms & bedding" loading="lazy" width="480" height="420"></figure><figure><h3>Annex</h3><img src="floor-annex-en.svg" alt="Annex — Rooms & bedding" loading="lazy" width="480" height="420"></figure></div><p class="floor-note">Schematic room layout, not to scale. Bed positions and the relative location of the two buildings are not shown.</p></div></section>
+<section class="around" id="around">
+  <div class="wrap">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">AROUND HERE</p>
+        <h2>Nearby</h2>
+      </div>
+      <p>Nature and learning spots unique to Naka City. Well worth a visit during your stay.</p>
+    </div>
+
+    <div class="around-grid">
+      <div class="around-card">
+        <div class="around-media">
+          <!-- Image: 林音 (exterior of Rinne no Yu) -->
+          <img src="rinne-onsen.jpg" alt="Exterior of THE BOTANICAL RESORT 林音's Rinne no Yu" loading="lazy" decoding="async">
+        </div>
+        <div class="around-body">
+          <span class="dist">Approx. 1.8 km</span>
+          <h3>THE BOTANICAL RESORT 林音 (RINNE)</h3>
+          <p>A complex combining a botanical garden, tree-top adventure course, and hot spring facility. A spot the whole family can enjoy all day.</p>
+          <p style="margin-top:10px;"><a href="https://rinne-resort.jp/" target="_blank" rel="noopener" style="color:var(--ember-dark); font-weight:700; text-decoration:underline;">Official website</a></p>
+        </div>
+      </div>
+      <div class="around-card">
+        <div class="around-media">
+          <!-- Image: Ibaraki Mushroom Museum (giant tree exhibit) -->
+          <img src="kinoko-museum-2.jpg" alt="Giant tree and mushroom exhibit at the Ibaraki Mushroom Museum" loading="lazy" decoding="async">
+        </div>
+        <div class="around-body">
+          <span class="dist">Approx. 1.5 km (17 min. walk)</span>
+          <h3>Ibaraki Mushroom Museum</h3>
+          <p>A unique museum where you can learn about mushroom ecology and local specialties of Naka City — a great spot for family learning time.</p>
+          <p style="margin-top:10px;"><a href="https://www.city.naka.lg.jp/event-kankou/kankou-spot/page000364.html" target="_blank" rel="noopener" style="color:var(--ember-dark); font-weight:700; text-decoration:underline;">Official website</a></p>
+        </div>
+      </div>
+      <div class="around-card">
+        <div class="around-media">
+          <!-- Image: Nanatsudo Park (gazebo and pond) -->
+          <img src="nanatsudo-park-1.jpg" alt="Gazebo and pond at Nanatsudo Park" loading="lazy" decoding="async">
+        </div>
+        <div class="around-body">
+          <span class="dist">Approx. 3.4 km</span>
+          <h3>Nature Walks (around Nanatsudo Park)</h3>
+          <p>Surrounded by rural scenery and coppice woods, ideal for walking or cycling. Enjoy the satoyama's changing seasonal expressions.</p>
+          <p style="margin-top:10px;"><a href="https://www.city.mito.lg.jp/site/kankouinfo/28430.html" target="_blank" rel="noopener" style="color:var(--ember-dark); font-weight:700; text-decoration:underline;">Official website (Mito City)</a></p>
+        </div>
+      </div>
+      <div class="around-card">
+        <div class="around-media">
+          <!-- Image: Berry's Park Shirosato (growing area) -->
+          <img src="berrys-park-3.jpg" alt="Growing area at Berry's Park Shirosato" loading="lazy" decoding="async">
+        </div>
+        <div class="around-body">
+          <span class="dist">Shirosato Town</span>
+          <h3>Berry's Park Shirosato</h3>
+          <p>A farm offering blueberry picking. Check the official website for current opening dates, varieties and visiting conditions.</p>
+          <p style="margin-top:10px;"><a href="https://berrys-park.jp/" target="_blank" rel="noopener" style="color:var(--ember-dark); font-weight:700; text-decoration:underline;">Official website</a></p>
+        </div>
+      </div>
+      <div class="around-card">
+        <div class="around-media">
+          <!-- Image: Naka Sunflower Festival (sunflower field from the viewing platform) -->
+          <img src="sunflower-festival-1.jpg" alt="Sunflower field seen from the viewing platform at the Naka Sunflower Festival" loading="lazy" decoding="async">
+        </div>
+        <div class="around-body">
+          <span class="dist">Walking distance</span>
+          <h3>Naka Sunflower Festival</h3>
+          <p>Around 4 hectares of fields near Naka LuckyFM Park (Naka Sports Park) burst into sunflowers each summer — a Naka City tradition, and within walking distance of Marutagoya Hotaru. Dates and events, including fireworks, vary by year. Check the tourism association’s current announcements.</p>
+          <p style="margin-top:10px;"><a href="https://www.naka-kanko.jp/page/page000129.html" target="_blank" rel="noopener" style="color:var(--ember-dark); font-weight:700; text-decoration:underline;">Official website (Naka City Sightseeing Association)</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 予約案内 ============ -->
+<section class="wrap prebooking" aria-label="Before requesting a booking"><h2>Before requesting a booking</h2><p>Please normally request a direct booking at least 28 days before check-in. Requests within 28 days remain open to individual consultation, subject to availability and preparation. Existing stays and their three-day buffers remain unavailable. A request is not a confirmed booking; only our confirmation establishes the reservation.</p><p>Tax included: JPY 28,000 per night for up to four guests, plus JPY 4,800 per additional guest per night. Total = (28,000 + 4,800 × guests beyond four) × nights. Adults and children pay the same. Bedding type or use does not change the accommodation price. Separately requested experiences or options may incur additional charges, quoted before application.</p><p>Maximum 20 guests. Sleeping arrangements depend on group size and composition; two guests may share a double bed.</p><p>Check-in from 15:00; check-out by 11:00. Please ask in advance about early check-in; we accommodate requests when preparation allows.</p><p>Direct bookings: cancellation is free through eight days before check-in; 100% from seven days before through check-in day. Final guest count is normally set seven days before check-in. Reductions after final confirmation are not refunded. Increases require individual approval of capacity, bedding and operating conditions, with a recalculated price (maximum 20). The property pays bank fees for refunds. OTA bookings follow their agreed conditions.</p><p>Full payment by bank transfer is normally due seven days before check-in. For an exceptionally accepted booking after that deadline, we specify an individual payment deadline. We may cancel an unpaid reservation following individual review; cancellation is not automatic. Guests pay the bank transfer fee for accommodation payments.</p><p>Children accompanied by an adult are welcome. Groups consisting only of minors cannot stay. Do not admit unregistered visitors to the property without prior permission. Illegal activities, conduct against public order or morals, and use for providing or receiving sexual services are prohibited. Depending on the circumstances and applicable law, use may be stopped and guests may be asked to leave.</p><p>No pets (assistance dogs are handled in accordance with law). No indoor smoking, including electronic cigarettes. No Wi-Fi. Parking comfortably accommodates about four cars; ask about more. Use BBQs and fire only in designated areas, never on artificial turf. Clean equipment and dispose of charcoal and ash in designated places. Outdoor fireworks: courtyard only, until 22:00; no aerial fireworks.</p><p>Enjoy the changing seasons in our natural surroundings. Insects may occasionally enter rooms, and spider webs may appear outdoors or around the buildings. We clean and maintain the property with care, but cannot completely prevent these features of the natural environment.</p><p>Specific check-in instructions and emergency contact details for your stay will be provided privately before arrival.</p><p><a href="guide-en.html">Guest guide</a> · <a href="terms.html">Accommodation terms (Japanese)</a> · <a href="privacy.html">Privacy policy (Japanese)</a></p></section>
+<section class="reserve" id="reserve"><div class="wrap">
+<div class="reserve-top"><p class="eyebrow">BOOKING REQUEST</p><h2>Request Status & Booking Requests</h2><p>Check request status and the tax-inclusive accommodation price using your dates and total guest count. This is not an instant booking.</p></div>
+<div class="price-grid"><div class="price-card"><span class="label">1–4 guests / night</span><div class="amount">JPY 28,000</div><p class="note">Tax included · adults and children pay the same</p></div><div class="price-card"><span class="label">Each guest beyond 4 / night</span><div class="amount">+ JPY 4,800</div><p class="note">Tax included · per guest · maximum 20</p></div><div class="price-card"><span class="label">Payment</span><div class="amount">Bank transfer</div><p class="note">Instructions are provided after confirmation.</p></div></div><div class="flow-row"><div class="flow-item"><div class="num">1</div><h4>Send a request</h4><p>Enter your dates and total guest count.</p></div><div class="flow-item"><div class="num">2</div><h4>Property review</h4><p>We check your details, the latest bookings and preparation.</p></div><div class="flow-item"><div class="num">3</div><h4>Booking confirmation</h4><p>Your reservation is established upon our confirmation.</p></div><div class="flow-item"><div class="num">4</div><h4>Payment & guest details</h4><p>Bank transfer and guest registration instructions follow confirmation.</p></div></div>
+<div class="reserve-cta"><a href="#request" class="btn">Make a booking request</a></div>
+<div id="request" class="request-widget"><iframe id="requestFrame" src="request.html?lang=en" title="Request Status & Booking Requests" loading="lazy" referrerpolicy="no-referrer"></iframe><p><a id="requestFullPage" href="request.html?lang=en" target="_blank" rel="noopener">Open the form separately</a></p></div>
+    <div class="access-box" style="grid-template-columns:1fr;">
+      <div class="access-info">
+        <h3>Access</h3>
+        <p>4692-306 To, Naka City, Ibaraki 311-0122, Japan</p>
+        <p>Approx. 14 km (about 20 min. by car) from Mito Station</p>
+        <p>Approx. 34 km from Ibaraki Airport</p>
+        <p>Approx. 94 km from Narita International Airport</p>
+        <p style="margin-top:16px;"><a href="https://maps.app.goo.gl/i5mKSvutC2yJFYKs7" target="_blank" rel="noopener" class="btn outline" style="display:inline-flex;">Open in Google Maps</a></p>
+        <p style="margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.15); font-size:0.85rem; color:#b9c7b9; line-height:1.8;">
+          *Searching by address alone may point to a location some distance from the actual property. Please use the Google Maps link above to confirm the exact spot.<br>
+          *The property sits partway up a slope with three entrances. From the bottom of the slope, they are, in order: our property, our neighbor's home, and an entrance leading to another road. If you're arriving after dark, please take care to use the entrance at the bottom of the slope, as that is ours (during the day, the log cabin is partly visible from the road partway up the slope).
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">Marutagoya Hotaru</div>
+        <p>A log cabin in the satoyama countryside of Naka City, Ibaraki. A place for everyone to be wrapped in nature.</p>
+        <p style="margin-top:14px; font-size:0.76rem; color:#8a9a8a;">Operated by: Chisetsu Co., Ltd.　／　Lodging business license: Hina-ho-shirei-ryo No. 23-09</p>
+      </div>
+      <div class="footer-links">
+        <div>
+          <h5>MENU</h5>
+          <ul>
+            <li><a href="#facility">Facility</a></li>
+            <li><a href="#nature">Nature</a></li>
+            <li><a href="#stay">Stay Info</a></li>
+            <li><a href="#around">Nearby</a></li>
+            <li><a href="#reserve">Reservations</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>CONTACT</h5>
+          <ul>
+            <li>Email: <a href="mailto:marutagoya.hotaru@gmail.com">marutagoya.hotaru@gmail.com</a></li>
+          </ul>
+        </div>
+        <div>
+          <h5>LEGAL</h5>
+          <ul>
+            <li><a href="tokushoho.html">Legal Notice (JP)</a></li>
+            <li><a href="terms.html">Terms of Accommodation (JP)</a></li>
+            <li><a href="privacy.html">Privacy Policy (JP)</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Marutagoya Hotaru (Log Cabin in the Satoyama of Naka City)</span>
+      <span>4692-306 To, Naka City, Ibaraki, Japan</span>
+    </div>
+  </div>
+</footer>
+
+<script src="config.js" defer></script>
+<script src="site.js" defer></script>
+
+</body>
+</html>

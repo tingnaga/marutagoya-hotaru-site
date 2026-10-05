@@ -1,0 +1,20 @@
+
+/* Review additions; no paid service or build step required. */
+.review-banner{position:relative;z-index:1001;background:#fff3ca;color:#382b13;text-align:center;padding:10px 18px;font-size:.85rem;font-weight:700;}
+header{top:0;} section[id],div[id]{scroll-margin-top:100px;}
+.res-form a{text-decoration:underline;overflow-wrap:anywhere;}
+.res-form .btn{text-decoration:none;white-space:normal;justify-content:center;}
+.res-form p,.res-form li{overflow-wrap:anywhere;}
+.res-form .form-note{background:#f6f1e4;border-color:#e3d5ae;}
+.email-preview{margin-top:28px;border-top:1px solid #c9bfa9;padding-top:24px;}
+.email-preview input,.email-preview textarea{width:100%;padding:12px;border:1px solid #b9ac90;border-radius:8px;background:#fff;color:#2b2318;font:inherit;}
+.email-preview textarea{min-height:280px;}
+.email-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;}
+:focus-visible{outline:3px solid #9b622b;outline-offset:4px;}
+button:disabled{opacity:.6;cursor:not-allowed;}
+@media(max-width:900px){.menu-toggle{z-index:1002;min-height:30px;min-width:40px;}nav ul{visibility:hidden;}nav ul.open{visibility:visible;overflow-y:auto;}}
+@media(max-width:600px){.res-form,.access-box,.season-calendar{padding:24px 18px;}.wrap{padding:0 18px;}.hero{min-height:760px;height:auto;}.hero-content{padding-top:180px;}.btn{padding:14px 22px;}.flow-row{grid-template-columns:1fr;}.stay-table th{width:98px;}.legal-table th{width:110px;}}
+
+.request-widget{margin-top:40px;background:#f6f1e4;color:#24392d;border-radius:20px;padding:12px;} .request-widget iframe{width:100%;height:1950px;border:0;border-radius:16px;background:#f6f1e4;} .request-widget>p{text-align:center;} .request-widget a{text-decoration:underline;} @media(max-width:600px){.request-widget{padding:0}.request-widget iframe{height:2450px;}}
+
+.floor-section{padding:56px 0;background:#faf7ef;color:#243c31}.floor-capacity{font-size:1.5rem;font-weight:800;border-left:5px solid #8d642f;padding:12px 18px;background:#f4dfaf;margin:18px 0}.floor-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:24px}.floor-grid figure{margin:0;min-width:0}.floor-grid h3{margin:0 0 12px;font-size:1.3rem}.floor-grid img{display:block;width:100%;height:auto;border-radius:12px}.floor-note{font-size:.9rem;margin-top:18px}@media(max-width:700px){.floor-grid{grid-template-columns:1fr}.floor-capacity{font-size:1.2rem}}

@@ -1,0 +1,95 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow"><base target="_top"><title>丸太小屋ほたる｜予約リクエスト</title><style>:root{color-scheme:light;font-family:system-ui,-apple-system,'Hiragino Kaku Gothic ProN',sans-serif;color:#2b2318;background:#f6f1e4;line-height:1.75}*{box-sizing:border-box}body{margin:0}main{max-width:880px;margin:auto;padding:28px}h1{font-size:1.6rem;color:#1f3d2e;margin-top:0}.notice{background:#e9ecd6;border-left:4px solid #44614b;padding:12px 20px;margin:20px 0}.notice p{margin:8px 0}ul{padding-left:1.5rem}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}label{display:block;margin:14px 0}label>span{display:block;font-weight:650;margin-bottom:8px}input,textarea{display:block;width:100%;min-height:48px;padding:10px 12px;border:1px solid #a39b89;border-radius:8px;background:#fff;color:#231e16;font:inherit}button{background:#234c36;color:white;border:0;border-radius:24px;padding:14px 24px;font:inherit;font-weight:700;cursor:pointer}button:disabled{background:#706e66;cursor:not-allowed}a{color:#285b3e;overflow-wrap:anywhere}.quote{font-size:1.5rem;font-weight:750;color:#1f3d2e}#reception,#result{font-weight:700;white-space:pre-line}.consent{display:flex;align-items:flex-start;gap:12px}.consent input{width:22px;min-height:22px;flex-shrink:0;margin-top:5px}.consent span{font-weight:400}.trap{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}:focus-visible{outline:3px solid #b16c2c;outline-offset:3px}#legend li{margin-bottom:8px}@media(max-width:600px){main{padding:20px 16px}.grid{grid-template-columns:1fr;gap:0}button{width:100%}h1{font-size:1.3rem}}
+</style></head><body>
+<main>
+<h1 id="title"></h1><p id="intro"></p>
+<div class="notice"><p id="deadline"></p><p id="promise"></p></div>
+<ul id="legend"></ul>
+<div class="notice"><p id="groupNotice">最大20名。寝具の利用方法は人数・構成により異なり、ダブルベッドは2名でご利用いただく場合があります。成人同伴のお子様は宿泊可能ですが、未成年者のみのグループはご利用いただけません。</p><p id="natureNotice">四季の自然に囲まれた施設です。季節により虫の侵入や屋外・建物周辺に蜘蛛の巣等が見られることがあります。清掃・管理に努めていますが、完全には防げないことをご了承ください。</p><p><a id="guideLink" href="guide.html">ご利用案内</a>を事前にご確認ください。</p></div>
+<form id="requestForm" method="post" onsubmit="return false">
+<div class="grid">
+<label><span id="labelCheckin"></span><input type="date" name="checkin" required></label>
+<label><span id="labelCheckout"></span><input type="date" name="checkout" required></label>
+<label><span id="labelGuests"></span><input type="number" name="guests" min="1" max="20" step="1" required value="4"></label>
+</div>
+<p class="quote" id="price" aria-live="polite"></p><p id="priceNote"></p>
+<button id="check" type="button" disabled></button><p id="reception" role="status" aria-live="polite"></p>
+<div class="grid">
+<label><span id="labelName"></span><input name="name" autocomplete="name" maxlength="120" required></label>
+<label><span id="labelEmail"></span><input name="email" type="email" autocomplete="email" maxlength="200" required></label>
+<label><span id="labelPhone"></span><input name="phone" type="tel" autocomplete="tel" maxlength="40" required></label>
+</div>
+<label><span id="labelNotes"></span><textarea name="notes" maxlength="1500" rows="4"></textarea></label>
+<div class="trap" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+<p id="privacyInfo"></p><p id="payment"></p><p><a id="terms" hidden rel="noopener" target="_blank"></a> <a id="privacy" hidden rel="noopener" target="_blank"></a></p>
+<label class="consent"><input type="checkbox" name="agree" required><span id="labelAgree"></span></label>
+<button id="submit" type="submit" disabled></button>
+<p id="result" role="status" aria-live="polite" tabindex="-1"></p>
+</form>
+<p id="fallback"></p><a href="mailto:marutagoya.hotaru@gmail.com">marutagoya.hotaru@gmail.com</a>
+</main>
+<script>const BOOT = {language: (new URLSearchParams(location.search).get('lang') || 'ja'), termsUrl: "terms.html", privacyUrl: "privacy.html", guideUrl: "guide.html"};</script>
+<script>const WORDS = {"ja": {"title": "予約受付状況・予約リクエスト", "intro": "日程と宿泊人数を入力して、受付状況と税込宿泊料金をご確認ください。即時予約ではありません。", "deadline": "直接予約は原則チェックイン28日前までにお申し込みください。28日前未満も、予約・準備状況に応じて個別にご相談を承ります。予約済みの日程と前後3日の予約不可期間は受け付けません。送信だけでは予約は成立せず、当施設からの予約確定連絡をもって成立します。", "promise": "予約リクエスト送信時点では予約は確定していません。カレンダー上で受付可能な日程であっても、施設の運営状況等によりご予約をお受けできない場合があります。内容および最新の予約状況を確認後、当施設からの予約確定のご連絡をもって予約成立となります。", "legend": ["○ 予約リクエスト受付中：チェックイン日の28日以上前で、既存予約・前後3日の予約バッファに抵触しない日程。", "△ 個別相談：チェックイン28日前未満。最新状況と準備状況を確認してご案内します。", "× 受付不可：既存予約または前後3日の予約不可期間に抵触する日程。"], "labelCheckin": "チェックイン日 *", "labelCheckout": "チェックアウト日 *", "labelGuests": "宿泊人数（1〜20名）*", "labelName": "代表者氏名 *", "labelEmail": "メールアドレス *", "labelPhone": "電話番号 *", "labelNotes": "連絡事項（任意）", "labelAgree": "リクエスト送信だけでは予約が成立しないこと、および個人情報の利用目的を確認しました。", "check": "予約受付状況を確認", "submit": "予約リクエストを送信", "privacyInfo": "入力情報はリクエストへの返信、受付判断、予約手続きのために利用します。宿泊者全員の住所・氏名・年齢等は予約確定後に別途ご案内します。この段階では旅券番号や他の宿泊者の情報を入力しないでください。", "payment": "銀行振込は原則チェックイン7日前までに全額の入金確認が必要です。7日前を過ぎて例外的に受け入れる場合は支払期限を個別に指定します。未入金の場合は予約を取り消すことがあります（自動取消ではありません）。宿泊料金のお振込みにかかる振込手数料は、お客様のご負担となります。", "priceNote": "税込で4名まで28,000円／泊、5名以降は1名につき4,800円／泊。合計は（28,000円＋4,800円×4名を超える人数）×泊数です。料金は人数・泊数で決まり、寝具の種類や利用方法では変わりません。別途申し込む体験・オプションは有料の場合があり、お申込み前に料金をご案内します。 最大20名。寝具の利用方法は人数・構成により異なり、ダブルベッドは2名でご利用いただく場合があります。", "terms": "宿泊約款", "privacy": "プライバシーポリシー", "fallback": "表示・送信できない場合は、メールでお問い合わせください。", "initial": "日程・人数を入力してください。", "UNAVAILABLE": "受付状況を確認できません。時間を置くか、メールでお問い合わせください。", "OUT_OF_RANGE": "本日から1年以内の日程を選択してください。", "INVALID_INPUT": "日付・人数・必須項目をご確認ください。チェックアウトはチェックインより後の日付を選択してください。", "CLOSED": "× 受付不可：選択した日程は既存予約または予約バッファに抵触します。", "OPEN": "○ 予約リクエスト受付中（予約確定を保証しません）", "CONSULT": "△ 個別相談：チェックイン28日前未満。最新状況と準備状況を確認してご案内します。", "LIMIT": "現在リクエストを送信できません。メールでお問い合わせください。", "CHANGED_REQUEST": "同じ送信操作の内容が変更されています。再読み込み後にお問い合わせください。", "checking": "受付状況を確認しています…", "sending": "送信しています…", "received": "予約リクエストを受け付けました。予約はまだ確定していません。施設からの連絡をお待ちください。", "pending": "リクエストは保存されました。施設への通知は処理待ちです。予約は未確定です。再送せず、必要な場合はメールでお問い合わせください。", "retry": "通信結果を確認できません。送信済みの可能性があるため、入力内容を変えず再度送信すると同じリクエストとして確認できます。", "pricePrefix": "税込宿泊料金：", "nights": "泊", "stale": "日程・人数を変更しました。受付状況を再確認してください。", "groupNotice": "最大20名。寝具の利用方法は人数・構成により異なり、ダブルベッドは2名でご利用いただく場合があります。成人同伴のお子様は宿泊可能ですが、未成年者のみのグループはご利用いただけません。", "natureNotice": "四季の自然に囲まれた施設です。季節により虫が室内に入ったり、屋外・建物周辺に蜘蛛の巣等が見られる場合があります。清掃・管理に努めていますが、自然環境の特性上、完全には防げないことをご了承ください。", "guideLink": "ご利用案内"}, "en": {"title": "Request Status & Booking Request", "intro": "Enter dates and total guests to check request status and the accommodation price. This is not an instant booking.", "deadline": "Please normally request a direct booking at least 28 days before check-in. Requests within 28 days remain open to individual consultation, subject to availability and preparation. Existing stays and their three-day buffers remain unavailable. A request is not a confirmed booking; only our confirmation establishes the reservation.", "promise": "Sending a booking request does not confirm a reservation. Even if the displayed dates accept requests, we may be unable to accommodate you due to operating conditions. A reservation is established only upon our confirmation after reviewing your request and the latest booking status.", "legend": ["○ Requests accepted: check-in at least 28 days away, without conflict with existing stays or their 3-day buffers.", "△ Individual consultation: check-in within 28 days.", "× Unavailable: conflicts with a stay or its three-day buffers."], "labelCheckin": "Check-in date *", "labelCheckout": "Check-out date *", "labelGuests": "Total guests (1–20) *", "labelName": "Representative’s name *", "labelEmail": "Email address *", "labelPhone": "Phone number *", "labelNotes": "Message (optional)", "labelAgree": "I understand that submitting does not confirm a booking and have reviewed the use of my personal information.", "check": "Check request status", "submit": "Send booking request", "privacyInfo": "Information is used to reply, assess your request and arrange a reservation. Details for all staying guests will be collected separately after confirmation. Do not enter passport numbers or other guests’ personal information here.", "payment": "Full payment by bank transfer is normally due seven days before check-in. For an exceptionally accepted booking after that deadline, we specify an individual payment deadline. We may cancel an unpaid reservation following individual review; cancellation is not automatic. Guests pay the bank transfer fee for accommodation payments.", "priceNote": "Tax included: JPY 28,000 per night for up to four guests, plus JPY 4,800 per additional guest per night. Total = (28,000 + 4,800 × guests beyond four) × nights. Adults and children pay the same. Bedding type or use does not change the accommodation price. Separately requested experiences or options may incur additional charges, quoted before application. Maximum 20 guests. Sleeping arrangements depend on group size and composition; two guests may share a double bed.", "terms": "Accommodation terms (Japanese)", "privacy": "Privacy policy (Japanese)", "fallback": "If status checking or submission is unavailable, please email us.", "initial": "Enter your dates and group size.", "UNAVAILABLE": "Request status is unavailable. Try later or contact us by email.", "OUT_OF_RANGE": "Choose dates within one year from today.", "INVALID_INPUT": "Check dates, guest count and required fields. Check-out must be after check-in.", "CLOSED": "× Requests not accepted: your dates overlap a stay or buffer.", "OPEN": "○ Requests accepted (confirmation is not guaranteed)", "CONSULT": "△ Individual consultation: check-in within 28 days.", "LIMIT": "Requests cannot be submitted at present. Please email us.", "CHANGED_REQUEST": "The contents of this submission changed. Please reload before making a new enquiry.", "checking": "Checking request status…", "sending": "Sending…", "received": "Your request has been received. Your booking is not confirmed. Please wait for our reply.", "pending": "Your request has been saved; notification to the property is pending. The booking is not confirmed. Please do not submit it again; email us if needed.", "retry": "The result could not be verified. You can retry with the same details to check the same request without creating another one.", "pricePrefix": "Accommodation total (tax included): ", "nights": "nights", "stale": "Dates or guest count changed. Please check request status again.", "groupNotice": "Maximum 20 guests. Bedding use depends on group size and composition; two guests may share a double bed. Children accompanied by an adult are welcome; groups consisting only of minors cannot stay.", "natureNotice": "Enjoy our natural surroundings. Insects may occasionally enter rooms and spider webs may appear outdoors or around buildings. We clean and maintain the property with care, but cannot completely prevent these features of nature.", "guideLink": "Guest guide"}, "zh": {"title": "预订受理状况・预订申请", "intro": "请输入日期与住宿人数，查询受理状况与含税住宿费用。本功能并非即时预订。", "deadline": "直接预订原则上请于入住28天前申请。不足28天仍可个别咨询，是否受理由预订及准备情况决定。已有住宿及前后3天缓冲期不可受理。发送申请不代表预订成立，以设施发出的预订确认通知为准。", "promise": "发送预订申请时，预订尚未成立。即使显示可受理，也可能因设施运营状况等原因无法接受。我们确认申请内容及最新预订状况后，以设施发出的预订确认通知为准。", "legend": ["○ 接受预订申请：距离入住至少28天，且不与已有预订及前后3天缓冲期冲突。", "△ 个别咨询：距入住不足28天。", "× 不可受理：与已有住宿或前后3天缓冲期冲突。"], "labelCheckin": "入住日期 *", "labelCheckout": "退房日期 *", "labelGuests": "住宿人数（1〜20人）*", "labelName": "代表人姓名 *", "labelEmail": "邮箱地址 *", "labelPhone": "电话号码 *", "labelNotes": "留言（选填）", "labelAgree": "我理解提交申请并不代表预订成立，并已确认个人信息的使用目的。", "check": "查询预订受理状况", "submit": "发送预订申请", "privacyInfo": "填写信息用于回复、判断是否受理及办理预订。全体住客的地址、姓名、年龄等资料将在确认预订后另行收集。请勿在此填写护照号码或其他住客的个人资料。", "payment": "原则上须在入住7天前确认收到全额银行转账。逾期后例外接受的预订另行指定付款期限。未到账时可能经个别判断取消预订，不会自动取消。住宿付款的银行转账手续费由客人承担。", "priceNote": "含税：4人以内每晚28,000日元，第5人起每增加1人每晚加收4,800日元。合计＝（28,000＋4,800×超出4人的人数）×晚数。成人儿童同价。床品种类及使用方式不影响住宿价格。另行申请的体验或选配项目可能收费，申请前将另行说明。 最多20人。寝具使用方式因人数及人员构成而异，双人床可能由2人共用。", "terms": "住宿条款（日文）", "privacy": "隐私政策（日文）", "fallback": "如无法查询或发送，请通过邮件联系。", "initial": "请输入日期与住宿人数。", "UNAVAILABLE": "暂时无法确认受理状况，请稍后再试或通过邮件咨询。", "OUT_OF_RANGE": "请选择从今天起一年以内的日期。", "INVALID_INPUT": "请确认日期、人数及必填项。退房日期须晚于入住日期。", "CLOSED": "× 不可受理：所选日期与预订或缓冲期冲突。", "OPEN": "○ 接受预订申请（不保证预订成立）", "CONSULT": "△ 个别咨询：距入住不足28天。", "LIMIT": "目前无法发送申请，请通过邮件咨询。", "CHANGED_REQUEST": "此次发送的内容已更改，请刷新页面后重新咨询。", "checking": "正在查询受理状况…", "sending": "正在发送…", "received": "已收到预订申请。预订尚未确认，请等待设施回复。", "pending": "申请已保存，发送给设施的通知尚在处理中。预订尚未确认，请勿重复发送；必要时请通过邮件联系。", "retry": "无法确认发送结果。请保持内容不变再次发送，以查询同一申请的结果。", "pricePrefix": "含税住宿费用：", "nights": "晚", "stale": "日期或人数已更改，请重新查询受理状况。", "groupNotice": "最多20人。寝具使用方式因人数及人员构成而异，双人床可能由2人共用。欢迎成人陪同的儿童，不接受全为未成年人的团体。", "natureNotice": "设施位于四季变化的自然环境中。部分季节可能有昆虫进入室内，室外及建筑周围可能出现蜘蛛网。我们尽力清洁维护，但无法完全避免。", "guideLink": "使用指南"}};
+</script>
+<script>(function(){
+'use strict';
+const lang=['ja','en','zh'].includes(BOOT.language)?BOOT.language:'ja',t=WORDS[lang];
+document.documentElement.lang=lang;
+const $=id=>document.getElementById(id), form=$('requestForm'),f=form.elements;
+Object.keys(t).forEach(key=>{if($(key))$(key).textContent=t[key];});
+t.legend.forEach(text=>{const li=document.createElement('li');li.textContent=text;$('legend').appendChild(li);});
+for(const key of ['terms','privacy']){const u=BOOT[key+'Url'];if(u&&(/^[a-z-]+\.html$/.test(u)||/^https:\/\//.test(u))){$(key).href=u;$(key).hidden=false;}} if(BOOT.guideUrl)$('guideLink').href=BOOT.guideUrl.replace(/guide\.html$/,lang==='ja'?'guide.html':'guide-'+lang+'.html');
+const online=typeof google!=='undefined'&&google.script&&google.script.run;
+let session=null,version=0,status=null,busy=false,received=false,pending=null;
+function rpc(method,payload){return new Promise((resolve,reject)=>{
+ if(!online){reject(new Error('Offline'));return;}
+ const runner=google.script.run.withSuccessHandler(resolve).withFailureHandler(reject);
+ if(method==='startRequest')runner.startRequest();else if(method==='getReception')runner.getReception(payload);else runner.submitRequest(payload);
+});}
+function day(s){if(!/^\d{4}-\d{2}-\d{2}$/.test(s))return NaN;const n=Date.parse(s+'T00:00:00Z');return Number.isFinite(n)&&new Date(n).toISOString().slice(0,10)===s?n/86400000:NaN;}
+function selection(){return {checkin:f.checkin.value,checkout:f.checkout.value,guests:Number(f.guests.value)};}
+function validDates(){const v=selection(),a=day(v.checkin),b=day(v.checkout);return Number.isFinite(a)&&Number.isFinite(b)&&b>a&&Number.isInteger(v.guests)&&v.guests>=1&&v.guests<=20;}
+function updatePrice(){
+ if(!validDates()){$('price').textContent=t.initial;return;}
+ const v=selection(),nights=day(v.checkout)-day(v.checkin),price=(28000+4800*Math.max(0,v.guests-4))*nights;
+ $('price').textContent=t.pricePrefix+price.toLocaleString(lang)+' JPY ('+nights+' '+t.nights+')';
+ f.checkout.min=new Date((day(v.checkin)+1)*86400000).toISOString().slice(0,10);
+}
+function refreshButtons(){
+ $('check').disabled=!session||busy||received||!validDates();
+ $('submit').disabled=!session||busy||received||(!pending&&!['OPEN','CONSULT'].includes(status));
+}
+function freeze(on){Array.from(f).forEach(el=>{if(el.tagName!=='BUTTON')el.disabled=on;});}
+form.addEventListener('input',event=>{
+ if(['checkin','checkout','guests'].includes(event.target.name)){version++;status=null;$('reception').textContent=t.stale;updatePrice();}
+ refreshButtons();
+});
+$('check').addEventListener('click',async()=>{
+ if(!validDates()||!session)return;
+ const serial=++version;busy=true;refreshButtons();$('reception').textContent=t.checking;
+ try{const result=await rpc('getReception',selection());if(serial!==version)return;status=result.ok?result.status:null;$('reception').textContent=t[result.status||result.code]||t.UNAVAILABLE;}
+ catch(e){if(serial===version){status=null;$('reception').textContent=t.UNAVAILABLE;}}
+ finally{busy=false;refreshButtons();}
+});
+form.addEventListener('submit',async event=>{
+ event.preventDefault();
+ if(busy||received||!session||(!pending&&!form.reportValidity()))return;
+ if(!pending){
+  if(!['OPEN','CONSULT'].includes(status))return;
+  pending=Object.assign({},selection(),session,{name:f.name.value,email:f.email.value,phone:f.phone.value,notes:f.notes.value,website:f.website.value,agree:f.agree.checked});
+ }
+ busy=true;freeze(true);refreshButtons();$('result').textContent=t.sending;
+ try{
+  const result=await rpc('submitRequest',pending);
+  if(result.ok&&result.received){received=true;$('result').textContent=result.mail==='SENT'?t.received:t.pending;}
+  else{$('result').textContent=t[result.code]||t.UNAVAILABLE;pending=null;freeze(false);status=null;}
+ }catch(e){$('result').textContent=t.retry;/* Keep the identical payload and id for an uncertain retry. */}
+ finally{busy=false;refreshButtons();$('result').focus();}
+});
+updatePrice();$('reception').textContent=t.UNAVAILABLE;
+if(online)rpc('startRequest').then(result=>{
+ if(result.ok){session={id:result.id,time:result.time,token:result.token};f.checkin.min=result.today;f.checkout.min=result.today;f.checkin.max=result.until;f.checkout.max=result.until;$('reception').textContent=t.initial;}
+ refreshButtons();
+}).catch(()=>{$('reception').textContent=t.UNAVAILABLE;});
+})();
+</script>
+</body></html>
